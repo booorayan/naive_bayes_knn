@@ -1,4 +1,5 @@
 # Classifying Mail as Spam or Not and Predicting Whether One Survives An Accident
+
 #### This project uses machine learning classification models to predict whether passengers will survive a ship accident
 #### and also classify mails as spam or not.
 #### It achieves these two objectives separately using different ML classification models. 
@@ -25,28 +26,38 @@ This project employed the CRISP-DM methodology. The methodology entailed the fol
   * Modelling:
 
       Models used included naives bayes classifier, random forest, knn, xgboost classifier and logistic regression
+
+         # using the multinomial model to make predictions
+         multinomi = MultinomialNB()
+
+         # training the multinomial model with data
+         multinomi.fit(ffeatt_train, ttargg_train)
+
+         # making predictions with the model
+         munom_pred = multinomi.predict(ffeatt_test)
+      
   * Evaluation of Model:
 
       The metrics used for evaluating the performance of the models included classification report, confusion matrix, 
       cross val score and accuracy score
       
-         print('\n' + '===='*20)
-         np.round(metrics.accuracy_score(ttargg_test, bern_pred) * 100, 2)
-         print('\n' + '===='*20)
-         print('Classification Report:\n', metrics.classification_report(ttargg_test, bern_pred))
-         print('\n' + '===='*20)
-         print('Confusion Matrix:\n', metrics.confusion_matrix(ttargg_test, bern_pred))
-         print('\n' + '===='*20)
+          print('\n' + '===='*20)
+          np.round(metrics.accuracy_score(ttargg_test, bern_pred) * 100, 2)
+          print('\n' + '===='*20)
+          print('Classification Report:\n', metrics.classification_report(ttargg_test, bern_pred))
+          print('\n' + '===='*20)
+          print('Confusion Matrix:\n', metrics.confusion_matrix(ttargg_test, bern_pred))
+          print('\n' + '===='*20)
 
       
       Various classification models were compared with the knn classifier to determine the best models for predicting
       whether one survived or not.
       
-         results = pd.DataFrame({'Model': ['Naive Bayes Gaussian', 'Random Forest', 'XGBoost', 'Logistic Regression'],
-                         'Test Accuracy Score': [gacc, rfacc, xgbacc, logacc]})
-         results.sort_values('Test Accuracy Score', ascending=False, inplace=True)
+          results = pd.DataFrame({'Model': ['Naive Bayes Gaussian', 'Random Forest', 'XGBoost', 'Logistic Regression'],
+                          'Test Accuracy Score': [gacc, rfacc, xgbacc, logacc]})
+          results.sort_values('Test Accuracy Score', ascending=False, inplace=True)
 
-         results
+          results
 
 ## Libraries Used
 The following python libraries were used for the project:

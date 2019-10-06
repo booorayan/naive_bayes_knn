@@ -1,7 +1,6 @@
 # Classifying Mail as Spam or Not and Predicting Whether One Survives An Accident
 
-#### This project uses machine learning classification models to predict whether passengers will survive a ship accident
-#### and also classify mails as spam or not.
+#### This project uses machine learning classification models to predict whether passengers will survive a ship accident and also classify mails as either spam or not.
 #### It achieves these two objectives separately using different ML classification models. 
 
 #### The link to the dataset used for predicting whether a passenger will survive an accident or not is provided here: https://www.kaggle.com/c/titanic/download/train.csv
@@ -16,6 +15,11 @@ The objectives of the project were:
   * Predict whether passengers will survive or not using knn classifier
   * Classify mails as either spam or not using naives bayes classifier 
 
+The test size for the train and tests was chosen to be 0.30 as it exhibited the highest test set accuracy when evaluated against sizes 0.2 and 0.4
+
+The Random Forest Classifier exhibited the highest accuracy in the prediction of whether an individual will survive or not, with an accuracy of 88.27%
+
+The Multinomial NB classifier recorded the highest accuracy in the classification of mail as either spam or not, with an accuracy of 88.49%
 
 
 ## Experiment Design
@@ -49,13 +53,13 @@ This project employed the CRISP-DM methodology. The methodology entailed the fol
           print('Confusion Matrix:\n', metrics.confusion_matrix(ttargg_test, bern_pred))
           print('\n' + '===='*20)
           
-         gacc = metrics.accuracy_score(targ_test, gausspred)
-         gacc = round(gacc * 100, 2)
-         gacc
-         print('\n' +'===='*20)
-         gtacc = gauss.score(feat_train, targ_train)
-         gtacc = round(gtacc * 100, 2)
-         gtacc
+          gacc = metrics.accuracy_score(targ_test, gausspred)
+          gacc = round(gacc * 100, 2)
+          gacc
+          print('\n' +'===='*20)
+          gtacc = gauss.score(feat_train, targ_train)
+          gtacc = round(gtacc * 100, 2)
+          gtacc
 
       
       Various classification models were compared with the knn classifier to determine the best models for predicting

@@ -44,10 +44,18 @@ This project employed the CRISP-DM methodology. The methodology entailed the fol
           print('\n' + '===='*20)
           np.round(metrics.accuracy_score(ttargg_test, bern_pred) * 100, 2)
           print('\n' + '===='*20)
-          print('Classification Report:\n', metrics.classification_report(ttargg_test, bern_pred))
+          print('Classification Report:\n',   metrics.classification_report(ttargg_test, bern_pred))
           print('\n' + '===='*20)
           print('Confusion Matrix:\n', metrics.confusion_matrix(ttargg_test, bern_pred))
           print('\n' + '===='*20)
+          
+         gacc = metrics.accuracy_score(targ_test, gausspred)
+         gacc = round(gacc * 100, 2)
+         gacc
+         print('\n' +'===='*20)
+         gtacc = gauss.score(feat_train, targ_train)
+         gtacc = round(gtacc * 100, 2)
+         gtacc
 
       
       Various classification models were compared with the knn classifier to determine the best models for predicting
